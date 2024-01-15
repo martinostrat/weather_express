@@ -1,17 +1,18 @@
 <div class="container">
   <div class="row">
     <div class="col-md-6 mx-auto text-center bg-primary mt-5 p-5 rounded">
-      <h1 id="location"></h1>
+      <h1 id="location"><%= city %></h1>
       <ul class="list-group mt-3">
-        <li class="list-group-item" id="description"></li>
-        <li class="list-group-item" id="temp"></li>
+        <li class="list-group-item" id="temp"><h2><%= temp %></h2></li>
+        <li class="list-group-item" id="description"><h5><%= desc %></h5></li>
       </ul>
-      <h1 class="mt-3">Change city</h1>
+      <h1 class="mt-5">Change city</h1>
       <form id="change-city">
         <div class="form-group">
           <label for="city-name">City</label>
           <input type="text" id="city-name" class="form-control" />
         </div>
+        <input type="submit" value="Change city" class="btn btn-grey" />
       </form>
     </div>
   </div>
