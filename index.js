@@ -6,6 +6,9 @@ const app = express();
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
 
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+
 const key = '';
 
 let city = 'Tartu';
@@ -23,6 +26,24 @@ app.get('/', (req, res) => {
                 temp: temp,
                 desc: desc
             });
+        })
+})
+
+app.post('/', (req, res) => {
+    let city = req.body.cityname;
+
+    fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${key}`)
+        .then(res => res.json())
+        .then(data => {
+            let city = data.name;
+            let temp = Math.round(parseFloat(data.main.temp) - 273.15);
+            let desc = data.weather[0].description;
+
+            res.render('index', {
+                city: city,
+                temp: temp,
+                desc: desc
+            })
         })
 })
 

@@ -7,10 +7,15 @@
         <li class="list-group-item" id="description"><h5><%= desc %></h5></li>
       </ul>
       <h1 class="mt-5">Change city</h1>
-      <form id="change-city">
+      <form id="change-city" method="post" action="/">
         <div class="form-group">
           <label for="city-name">City</label>
-          <input type="text" id="city-name" class="form-control" />
+          <input
+            type="text"
+            id="city-name"
+            class="form-control"
+            name="cityname"
+          />
         </div>
         <input type="submit" value="Change city" class="btn btn-grey" />
       </form>
