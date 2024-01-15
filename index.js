@@ -56,7 +56,11 @@ app.all('/', (req, res) => {
             res.render('index', data);
         })
         .catch(err => {
-            res.render('index', { error: 'Something went wrong, try again!' });
+            if (city == '') {
+                res.render('index', { error: 'Please enter the city name correctly' });
+            } else {
+                res.render('index', { error: 'Something went wrong, try again!' });
+            }
         })
 })
 
