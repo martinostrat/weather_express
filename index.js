@@ -9,7 +9,7 @@ app.set('views', path.join(__dirname, 'views'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-const key = 'b05a100c6e6c27146f81ad75c338bae4';
+const key = '';
 
 let city = 'Tartu';
 
